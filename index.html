@@ -10,11 +10,11 @@
   <meta name="author" content="Champions League Central" />
   <meta name="publisher" content="Champions League Central" />
 
-  <meta name="description" content="Get hyped for PSG vs Inter Milan – the UEFA Champions League Final 2025 in Berlin. Full stats, predicted lineups, streaming info & a fun penalty kick game!" />
-  <meta name="keywords" content="UEFA Champions League Final 2025, PSG vs Inter Milan, PSG lineup, Inter lineup, Watch Champions League, UCL 2025, Football game, final kick game, PSG Inter prediction, Champions League schedule, ESPN UEFA final, Discovery Plus Football" />
+  <meta name="description" content="🎁 Bonus Access! First fan to click wins a surprise streaming gift to watch PSG vs Inter Milan – Champions League Final 2025. Plus: lineups, predictions, and penalty kick game!" />
+  <meta name="keywords" content="UEFA Champions League Final 2025, PSG vs Inter Milan, PSG lineup, Inter lineup, UCL Final Berlin, Final Kick game, football predictions, ESPN Discovery stream" />
 
   <meta property="og:title" content="PSG vs Inter Milan | UEFA Champions League Final 2025" />
-  <meta property="og:description" content="Clash of giants in Berlin – PSG faces Inter Milan in the UCL Final! Dive into team stats, streaming options & play a mini football game!" />
+  <meta property="og:description" content="Clash of giants in Berlin – PSG faces Inter Milan in the UCL Final! Dive into team stats, stream links & play the Final Kick mini-game!" />
   <meta property="og:image" content="https://yourdomain.com/images/final-thumbnail.jpg" />
   <meta property="og:url" content="https://yourdomain.com/final2025" />
   <meta property="og:type" content="website" />
@@ -22,7 +22,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Champions League Final 2025: PSG vs Inter" />
-  <meta name="twitter:description" content="Get ready for the epic showdown in Berlin. Play the Final Kick mini-game and predict who wins!" />
+  <meta name="twitter:description" content="Get ready for the epic showdown in Berlin. Predict the winner and grab the surprise bonus gift!" />
   <meta name="twitter:image" content="https://yourdomain.com/images/final-thumbnail.jpg" />
   <meta name="twitter:site" content="@ChampionsLeagueCentral" />
 
@@ -80,13 +80,42 @@
       <canvas id="gameCanvas" width="600" height="400"></canvas>
     </section>
 
-
+    <section class="bonus">
+      <h2>🎁 Bonus Gift for the Fastest Fan!</h2>
+      <p>We’re giving away free access to stream the final. Click below to reveal your surprise gift and join the action!</p>
+      <button id="revealBtn">🎉 Reveal Gift</button>
+      <div id="giftContent" style="display: none; margin-top: 1rem;">
+        <p><strong>Email:</strong> infernape@gmail.com</p>
+        <p><strong>Password:</strong> Infernape12345@@</p>
+        <small>⚠️ First come, first served. This gift may expire anytime.</small>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Champions League Central. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll(".prediction").forEach(button => {
+      button.addEventListener("click", () => {
+        const team = button.getAttribute("data-team");
+        document.getElementById("result").innerText = `You picked: ${team}`;
+      });
+    });
+
+    document.getElementById("revealBtn").addEventListener("click", () => {
+      document.getElementById("giftContent").style.display = "block";
+      document.getElementById("revealBtn").style.display = "none";
+    });
+
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#d1e7ff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '20px Arial';
+    ctx.fillStyle = '#001f3f';
+    ctx.fillText('Click anywhere to shoot the final kick!', 140, 200);
+  </script>
 </body>
 </html>
